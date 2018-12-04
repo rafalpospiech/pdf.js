@@ -1188,7 +1188,7 @@
 				var moreInfoText = [this.l10n.get('error_version_info', {
 					version: _pdfjsLib.version || '?',
 					build: _pdfjsLib.build || '?'
-				}, 'PDF.js v{{version}} (build: {{build}})')];
+				}, 'PDF.js v{{version}} (dist: {{dist}})')];
 
 				if (moreInfo) {
 					moreInfoText.push(this.l10n.get('error_message', {
@@ -4351,7 +4351,7 @@
 		if (typeof window !== 'undefined' && window['pdfjs-dist/build/pdf']) {
 			pdfjsLib = window['pdfjs-dist/build/pdf'];
 		} else {
-			pdfjsLib = require('../build/pdf.js');
+			pdfjsLib = require('../dist/pdf.js');
 		}
 
 		module.exports = pdfjsLib;
@@ -5485,7 +5485,7 @@
 				kind: OptionKind.WORKER
 			},
 			workerSrc: {
-				value: '../build/pdf.worker.js',
+				value: '../dist/pdf.worker.js',
 				kind: OptionKind.WORKER
 			}
 		};
